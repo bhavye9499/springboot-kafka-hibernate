@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/springboot_hibernate_db
+    username: bhavye
+    password: bhavye
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: false
+
+kafka:
+  bootstrap:
+    servers: localhost:9092
+  consumer:
+    group:
+      id: my-group-id
+    max:
+      poll:
+        records: 3
+  topic:
+    name: my-topic
+
+logging:
+  level:
+    root: ERROR
+    org.springframework.boot: ERROR
+    org.springframework.kafka: ERROR
+    mysql: ERROR
+    com.bhavye: DEBUG
